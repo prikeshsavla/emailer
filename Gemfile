@@ -67,3 +67,10 @@ group :development do
   # A Ruby static code analyzer and formatter, based on the community Ruby style guide. [https://github.com/rubocop/rubocop]
   gem 'rubocop', '~> 1.62'
 end
+
+gem 'rspec-rails', '~> 6.1'
+
+gem 'rubocop-rails', '~> 2.24'
+gem 'rubocop-rspec', '~> 2.27'
+
+gem "shoulda-matchers", "~> 6.1"

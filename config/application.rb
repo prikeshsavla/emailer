@@ -30,7 +30,6 @@ module Emailer
     # Common ones are `templates`, `generators`, or `middleware`, for example.
     config.autoload_lib(ignore: %w[assets tasks])
 
-    
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files
@@ -39,7 +38,7 @@ module Emailer
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
 
-    config.action_mailer.default_options = {from: 'no-reply@example.org', reply_to: 'no-reply@example.org' }
+    config.action_mailer.default_options = { from: 'no-reply@example.org', reply_to: 'no-reply@example.org' }
     config.action_mailer.default_url_options = { host: 'example.com' }
     # Don't generate system test files.
     config.generators.system_tests = nil

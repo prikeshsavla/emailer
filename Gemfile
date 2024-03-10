@@ -78,3 +78,5 @@ group :development do
   gem 'guard', '~> 2.18'
   gem 'guard-rspec', '~> 4.7'
 end
+
+gem "simplecov", "~> 0.22.0"

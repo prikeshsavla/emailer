@@ -49,6 +49,17 @@ gem 'bootsnap', require: false
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem 'debug', platforms: %i[mri windows]
+
+  gem 'rspec-rails', '~> 6.1'
+
+  gem 'rubocop-rails', '~> 2.24'
+  gem 'rubocop-rspec', '~> 2.27'
+
+  gem 'shoulda-matchers', '~> 6.1'
+
+  # A Ruby static code analyzer and formatter, based on the community Ruby style guide. [https://github.com/rubocop/rubocop]
+  gem 'factory_bot_rails', '~> 6.4'
+  gem 'rubocop', '~> 1.62'
 end
 
 group :development do
@@ -64,13 +75,6 @@ group :development do
   # Preview mail in the browser instead of sending. [https://github.com/ryanb/letter_opener]
   gem 'letter_opener', '~> 1.9'
 
-  # A Ruby static code analyzer and formatter, based on the community Ruby style guide. [https://github.com/rubocop/rubocop]
-  gem 'rubocop', '~> 1.62'
+  gem 'guard', '~> 2.18'
+  gem 'guard-rspec', '~> 4.7'
 end
-
-gem 'rspec-rails', '~> 6.1'
-
-gem 'rubocop-rails', '~> 2.24'
-gem 'rubocop-rspec', '~> 2.27'
-
-gem "shoulda-matchers", "~> 6.1"

@@ -42,5 +42,8 @@ module Emailer
     config.action_mailer.default_url_options = { host: 'example.com' }
     # Don't generate system test files.
     config.generators.system_tests = nil
+    config.generators do |g|
+      g.factory_bot suffix: 'factory'
+    end
   end
 end

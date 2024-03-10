@@ -2,7 +2,7 @@
 
 class EventMailer < ApplicationMailer
   def notify(email)
-    subject = 'Welcome to My Awesome Site'
-    mail(to: email, subject:)
+    @email = email
+    mail(to: email.to, subject: email.subject)
   end
 end

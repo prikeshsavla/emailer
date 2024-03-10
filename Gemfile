@@ -80,3 +80,7 @@ group :development do
 end
 
 gem "simplecov", "~> 0.22.0"
+
+gem "brakeman", "~> 6.1"
+
+gem "bundler-audit", "~> 0.9.1"

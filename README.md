@@ -9,7 +9,7 @@ Things you may want to cover:
 
 - [x] Send email with action mailer
 - [x] Send email with custom template from model
-- [ ] Send email with custom template from model and variables for subject and body
+- [x] Send email with custom template from model and variables for subject and body
 - [ ] Send email as an event with required params
 - [ ] Edit email template in wysiwyg editor in admin area
 - [ ] Test email in admin area

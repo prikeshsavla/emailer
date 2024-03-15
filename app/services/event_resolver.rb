@@ -5,9 +5,10 @@ class EventResolver
     @mailer = mailer
   end
 
-  def notify(event_label, params)
+  def notify(event_label, message_detail)
     template = EmailTemplate.find_by(label: event_label)
-    message = EmailMessage.new({ to: params[:to], subject: template.subject, body: template.body })
+    message = EmailMessage.new({ to: message_detail[:to],
+                                 subject: template.subject, body: template.body, params: message_detail[:params] })
     mailer.notify(message).deliver
   end
 

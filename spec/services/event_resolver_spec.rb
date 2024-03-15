@@ -2,22 +2,29 @@
 
 RSpec.describe EventResolver do
   let(:event_mailer_mock) { class_double(EventMailer) }
+  let(:attributes) { { subject: 'Test event subject', body: 'Test event body', to: 'test@example.com' } }
   let(:message) { instance_double(Mail::Message) }
+
+  before do
+    create(:email_template, label: 'event_name', subject: 'Test event subject', body: 'Test event body')
+  end
 
   describe 'accepts an event label' do
     before do
-      params = { first_name: 'John', amount: 20 }
-      attributes = { subject: 'Test event subject', body: 'Test event body', to: 'test@example.com', params: }
       allow(message).to receive(:deliver)
-      allow(event_mailer_mock).to receive(:notify).with(having_attributes(attributes)).and_return(message)
     end
 
     it 'triggers mailer with correct params', :aggregate_failures do
-      create(:email_template, label: 'event_name', subject: 'Test event subject', body: 'Test event body')
+      params = { first_name: 'John', amount: 20 }
+      allow(event_mailer_mock).to receive(:notify).with(having_attributes(attributes.merge({ params: })))
+                                                  .and_return(message)
+      described_class.new(mailer: event_mailer_mock).notify('event_name', { to: 'test@example.com', params: })
+      expect(message).to have_received(:deliver)
+    end
 
+    it 'triggers mailer without any params', :aggregate_failures do
+      allow(event_mailer_mock).to receive(:notify).with(having_attributes(attributes)).and_return(message)
       described_class.new(mailer: event_mailer_mock).notify('event_name', { to: 'test@example.com' })
-
-      expect(event_mailer_mock).to have_received(:notify)
       expect(message).to have_received(:deliver)
     end
 

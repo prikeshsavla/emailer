@@ -75,16 +75,15 @@ Shoulda::Matchers.configure do |config|
   end
 end
 
-
 # TODO: add rails config
 # SimpleCov.start  'rails' do
-SimpleCov.start "rails" do
+SimpleCov.start 'rails' do
   enable_coverage :branch
-  add_filter "/test/"
-  add_filter "/config/"
-  add_filter "/vendor/"
-  add_filter "/view/"
-  add_filter "/lib/"
+  add_filter '/test/'
+  add_filter '/config/'
+  add_filter '/vendor/'
+  add_filter '/view/'
+  add_filter '/lib/'
   add_filter '/services/migrations/'
 
   add_group 'Views', 'app/features'
@@ -97,7 +96,6 @@ end
 # OPTIONAL
 # This outputs the report to your public folder
 # You will want to add this to .gitignore
-SimpleCov.coverage_dir "tmp/coverage"
+SimpleCov.coverage_dir 'tmp/coverage'
 
 SimpleCov.minimum_coverage line: 95.00, branch: 73
-

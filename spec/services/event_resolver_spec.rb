@@ -6,7 +6,8 @@ RSpec.describe EventResolver do
 
   describe 'accepts an event label' do
     before do
-      attributes = { subject: 'Test event subject', body: 'Test event body', to: 'test@example.com' }
+      params = { first_name: 'John', amount: 20 }
+      attributes = { subject: 'Test event subject', body: 'Test event body', to: 'test@example.com', params: }
       allow(message).to receive(:deliver)
       allow(event_mailer_mock).to receive(:notify).with(having_attributes(attributes)).and_return(message)
     end

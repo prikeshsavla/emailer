@@ -7,7 +7,7 @@ RSpec.describe EventMailer do
     let(:mail) do
       message = build(:email_message, to: 'test@example.com', subject: 'Reward for {{name}}',
                                       body: 'Hi {{name}}, You have recieved INR {{amount}}',
-                                      params: { name: 'John', amount: 20 })
+                                      fields: { name: 'John', amount: 20 })
       described_class.notify(message)
     end
 

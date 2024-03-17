@@ -86,3 +86,5 @@ gem 'brakeman', '~> 6.1'
 gem 'bundler-audit', '~> 0.9.1'
 
 gem 'cssbundling-rails', '~> 1.4'
+
+gem "tinymce-rails", "~> 6.8"

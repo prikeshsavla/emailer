@@ -11,7 +11,9 @@
 
   <p>
     <strong>Body:</strong>
-    <%= email_template.body %>
+    <article>
+      <%= email_template.body.html_safe %>
+    </article>
   </p>
 
   <p>
@@ -21,7 +23,9 @@
 
   <p>
     <strong>Custom fields:</strong>
-    <%= email_template.custom_fields %>
+    <article>
+      <%= email_template.custom_fields %>
+    </article>
   </p>
 
 </div>

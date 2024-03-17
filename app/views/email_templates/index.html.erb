@@ -4,7 +4,23 @@
 
 <div id="email_templates">
   <% @email_templates.each do |email_template| %>
-    <%= render email_template %>
+  <div id="<%= dom_id email_template %>">
+    <p>
+      <strong>Name:</strong>
+      <%= email_template.name %>
+    </p>
+  
+    <p>
+      <strong>Label:</strong>
+      <%= email_template.label %>
+    </p>
+  
+    <p>
+      <strong>Subject:</strong>
+      <%= email_template.subject %>
+    </p>
+  </div>
+  
     <p>
       <%= link_to "Show this email template", email_template %>
     </p>

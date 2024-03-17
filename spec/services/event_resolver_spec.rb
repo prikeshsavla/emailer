@@ -7,7 +7,7 @@ RSpec.describe EventResolver do
 
   before do
     create(:email_template, label: 'event_name', subject: 'Test event subject', body: 'Test event body',
-                            custom_fields: %w[first_name amount])
+                            custom_fields: '["first_name", "amount"]')
     create(:email_template, label: 'event_no_fields', subject: 'Test event subject', body: 'Test event body')
   end
 

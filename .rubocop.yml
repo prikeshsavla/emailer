@@ -12,3 +12,10 @@ AllCops:
 Metrics/BlockLength:
   Exclude: 
   - Guardfile
+
+RSpec/ExampleLength:
+  Max: 10
+  CountAsOne: [array, heredoc, method_call, hash]
+
+Metrics/MethodLength:
+  Max: 15

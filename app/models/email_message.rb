@@ -10,7 +10,7 @@ class EmailMessage
 
   def validate_fields
     if fields.nil?
-      errors.add :fields, "must have #{custom_fields.join(', ')}" 
+      errors.add :fields, "must have #{custom_fields.join(', ')}"
     else
       missing_fields = custom_fields - fields.stringify_keys.keys
       errors.add :fields, "must have #{missing_fields.join(', ')}" if missing_fields.any?

@@ -21,7 +21,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_16_030905) do
     t.string "subject"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.jsonb "custom_fields"
+    t.jsonb "custom_fields", default: "", null: false
   end
 
 end

@@ -7,13 +7,20 @@ class EventResolver
 
   def notify(event_label, message_detail)
     template = EmailTemplate.find_by!(label: event_label)
-    message = EmailMessage.new({ to: message_detail[:to],
-                                 subject: template.subject, body: template.body, custom_fields: template.custom_fields, fields: message_detail[:fields] })
-    if message.valid?
-      mailer.notify(message).deliver
-    else
-      raise message.errors.to_a.join(', ')
-    end
+    message = build_message(message_detail, template)
+    raise message.errors.to_a.join(', ') if message.invalid?
+
+    mailer.notify(message).deliver
+  end
+
+  private
+
+  def build_message(message_detail, template)
+    EmailMessage.new({ to: message_detail[:to],
+                       subject: template.subject,
+                       body: template.body,
+                       custom_fields: template.parsed_custom_fields,
+                       fields: message_detail[:fields] })
   end
 
   attr_reader :mailer

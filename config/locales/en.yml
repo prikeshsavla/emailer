@@ -29,3 +29,8 @@
 
 en:
   hello: "Hello world"
+  messages: 
+    email_template:
+      created_successfully: 'Email template was successfully created.'
+      updated_successfully: 'Email template was successfully updated.'
+      deleted_successfully: 'Email template was successfully deleted.'

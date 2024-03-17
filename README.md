@@ -10,7 +10,7 @@ Things you may want to cover:
 - [x] Send email with action mailer
 - [x] Send email with custom template from model
 - [x] Send email with custom template from model and variables for subject and body
-- [-] Send email as an event with required fields
+- [x] Send email as an event with required fields
 - [ ] Edit email template in wysiwyg editor (tiny mce) in admin area
 - [ ] Test email in admin area
 - [ ] Custom attributes beyond string
